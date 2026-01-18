@@ -30,7 +30,6 @@ export default async function handler(req, res) {
   Question: ${question}
   
   Respond ONLY in ${language}.
-  Do not explain tarot rules.
   Do not mention you are an AI.
   `
             }
@@ -39,7 +38,6 @@ export default async function handler(req, res) {
       });
   
       const data = await response.json();
-  
       const aiText = data.choices?.[0]?.message?.content;
   
       return res.status(200).json({
@@ -49,7 +47,7 @@ export default async function handler(req, res) {
   
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ error: "AI request failed" });//
+      return res.status(500).json({ error: "AI request failed" });
     }
   }
   
