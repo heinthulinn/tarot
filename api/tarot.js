@@ -49,7 +49,7 @@ export default async function handler(req, res) {
   
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ error: "AI request failed" });
+      return res.status(500).json({ error: "AI request failed" });//
     }
   }
   
